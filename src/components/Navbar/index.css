@@ -1,0 +1,18 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  font-weight: 900;
+  font-style: italic;
+  display: flex;
+  color: brown;
+  background-color: transparent;
+  max-height: 150px;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__black {
+  background-color: rgb(39, 65, 122);
+}

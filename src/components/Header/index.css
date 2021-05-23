@@ -1,0 +1,9 @@
+.header {
+  padding: 3px;
+  text-align: center;
+  background-color: rgb(170, 170, 170);
+}
+
+.header > h1 {
+  color: rgb(10, 76, 134);
+}

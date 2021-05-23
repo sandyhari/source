@@ -1,0 +1,24 @@
+.currentData_div {
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(119, 118, 116);
+  border-radius: 4px;
+}
+
+.title {
+  text-align: center;
+  background-color: rgb(179, 168, 168);
+  border-radius: 4px;
+}
+.title > h2 {
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.statewiseStats_div {
+  margin: 2px;
+}
+
+.accordion {
+  margin-bottom: 4px !important;
+}
