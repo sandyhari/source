@@ -1,0 +1,36 @@
+.banner_main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.banner_title,
+.banner_vaccine_content_title {
+  margin: auto;
+  margin-top: 5px;
+  padding: 2px;
+  text-align: center;
+  background-color: rgb(151, 150, 150);
+  border-radius: 3px;
+}
+.banner_content > div > h2 {
+  font-family: "Bree Serif", serif;
+}
+
+.banner_content {
+  width: 600px;
+  background-color: rgb(83, 83, 83);
+  border-radius: 3px;
+  margin: 14px;
+  padding: 4px;
+  box-shadow: 2px 9px 5px 0px rgba(71, 71, 71, 0.75);
+  -webkit-box-shadow: 2px 9px 5px 0px rgba(71, 71, 71, 0.75);
+  -moz-box-shadow: 2px 9px 5px 0px rgba(71, 71, 71, 0.75);
+}
+
+.banner_vaccine_content {
+  background-color: rgb(83, 83, 83);
+  border-radius: 3px;
+  margin: 20px;
+  padding: 8px;
+}

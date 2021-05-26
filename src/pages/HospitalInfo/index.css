@@ -1,0 +1,53 @@
+.currentData_div {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(119, 118, 116);
+  border-radius: 4px;
+}
+
+.title {
+  text-align: center;
+  background-color: rgb(179, 168, 168);
+  border-radius: 4px;
+}
+.title > h1 {
+  letter-spacing: 0.5px;
+}
+
+.data {
+  text-align: center;
+}
+
+.indiastats_div > table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.theading {
+  color: #fff;
+  background-color: #111;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 8px;
+  letter-spacing: 1px;
+}
+
+.horizontal {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+
+.horizontal::before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
