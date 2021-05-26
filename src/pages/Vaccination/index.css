@@ -1,0 +1,19 @@
+.formed {
+  margin-top: 20px;
+}
+.card {
+  margin: 4px !important;
+}
+
+.dosage {
+  color: #fff;
+  margin: 3px;
+  border-radius: 5px;
+  background-color: #111;
+}
+
+.card-text > span {
+  letter-spacing: 0.8px;
+  color: green;
+  font-weight: bold;
+}

@@ -2,6 +2,8 @@ import axios from "axios";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import shortUrls from "../../data/requests/index";
+import { axiosConfiguration, numberFormat } from "../../utils/index";
+
 import Statewise from "../StateWise/index";
 import "./index.css";
 
@@ -10,29 +12,14 @@ const Content = () => {
   const baseUri = `https://api.rootnet.in/covid19-in/`;
 
   useEffect(() => {
-    const max_time = 3;
-    // const retry_status_code = options.retry_status_code;
-    let counter = 0;
-    axios.interceptors.response.use(null, (error) => {
-      const config = error.config;
-      if (counter < max_time) {
-        counter++;
-        console.log(`retring ${counter}`);
-        return new Promise((resolve) => {
-          resolve(axios(config));
-        });
-      }
-      return Promise.reject(error);
-    });
-
     async function fetchData() {
+      axiosConfiguration();
       await axios
         .get(`${baseUri}${shortUrls.rawUnofficialData.stateWiseUri}`)
         .then((response) => {
-          console.log("==================");
-          console.log(response.data.data);
-          console.log("==================");
-
+          // console.log("==================");
+          // console.log(response.data.data);
+          // console.log("==================");
           setValue(response.data.data);
         })
         .catch((error) => {
@@ -47,23 +34,11 @@ const Content = () => {
       return;
     }
     fetchData();
-  }, []);
-
-  const numberFormat = (num) => {
-    let curr = num.toLocaleString("en-IN", {
-      style: "currency",
-      currency: "INR",
-    });
-    curr = curr.substring(1);
-    return curr.slice(0, -3);
-  };
+  }, [baseUri]);
 
   return (
     <>
       <div className="currentData_div">
-        <div className="title">
-          <h1> INDIA </h1>
-        </div>
         <div className="data">
           <div className="dayStyle">
             <h6>
@@ -74,7 +49,7 @@ const Content = () => {
             </h6>
           </div>
           <div className="indiastats_div">
-            <table>
+            <table className="table">
               <tbody>
                 <tr>
                   <th scope="row" className="theading">
@@ -122,41 +97,9 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <hr className="horizontal" />
-      <Statewise params={value} />
-      {/* <div className="currentData_div">
-        <div className="title">
-          <h2>Statewise</h2>
-        </div>
-        <div className="statewiseStats_div">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">State Name</th>
-                <th scope="col">Confirmed</th>
-                <th scope="col">Active</th>
-                <th scope="col">Recovered</th>
-                <th scope="col">Deaths</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Array.isArray(value.statewise)
-                ? value.statewise.map((e, i) => {
-                    return (
-                      <tr key={i}>
-                        <th scope="row">{e.state}</th>
-                        <td>{e.confirmed}</td>
-                        <td>{e.active}</td>
-                        <td>{e.recovered}</td>
-                        <td>{e.deaths}</td>
-                      </tr>
-                    );
-                  })
-                : 0}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
+      {/* <hr className="horizontal" /> */}
+      {/* <Statewise params={value} />
+      <HospitalInfo /> */}
     </>
   );
 };

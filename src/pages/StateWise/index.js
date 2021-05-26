@@ -23,7 +23,9 @@ const Statewise = (params) => {
                       aria-expanded="true"
                       aria-controls={`collapseOne${i}`}
                     >
-                      {e.state}
+                      <b>
+                        #{i + 1} {e.state}
+                      </b>
                     </button>
                   </h2>
                   <div

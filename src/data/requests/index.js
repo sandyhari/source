@@ -17,6 +17,9 @@ const endPoints = {
   rawUnofficialData: {
     stateWiseUri: "unofficial/covid19india.org/statewise",
   },
+  vaccination: {
+    uri: "v2/appointment/sessions/public/findByPin",
+  },
 };
 
 export default endPoints;

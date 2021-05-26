@@ -1,9 +1,18 @@
 .header {
+  margin: 18px;
   padding: 3px;
   text-align: center;
-  background-color: rgb(170, 170, 170);
+  background-color: rgb(71, 71, 71);
+  border-radius: 4px;
 }
 
 .header > h1 {
-  color: rgb(10, 76, 134);
+  color: rgb(242, 249, 255);
+  font-weight: 800;
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: 1.8px;
+}
+
+.header > h5 {
+  color: #000;
 }
